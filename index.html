@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utsho Mobile & Care | Dark Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #e5e5e5;
+      }
+      .product-card {
+        background: #171717;
+        border: 1px solid #262626;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .product-card:hover {
+        border-color: #3b82f6;
+        box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+        transform: translateY(-8px);
+      }
+      .glass-nav {
+        background: rgba(10, 10, 10, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #262626;
+      }
+      .gradient-text {
+        background: linear-gradient(to right, #3b82f6, #60a5fa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="sticky top-0 z-50 glass-nav py-4 px-6 md:px-20 flex justify-between items-center"
+    >
+      <h1 class="text-2xl font-black text-white italic">
+        Utsho
+        <span class="text-blue-500 underline decoration-orange-500"
+          >Mobile</span
+        >
+      </h1>
+      <div class="hidden md:flex space-x-8 font-medium text-gray-400">
+        <a href="#" class="text-blue-500">Home</a>
+        <a href="shop.html" class="hover:text-white transition">Shop</a>
+        <a href="#service" class="hover:text-white transition">Repairing</a>
+        <a href="#about" class="hover:text-white transition">Our Story</a>
+      </div>
+      <div class="flex items-center space-x-6 text-gray-300">
+        <i class="fas fa-search cursor-pointer hover:text-white"></i>
+        <div class="relative cursor-pointer">
+          <i class="fas fa-shopping-bag text-xl"></i>
+          <span
+            class="absolute -top-2 -right-2 bg-blue-600 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold"
+            >0</span
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header
+      class="relative py-24 px-6 overflow-hidden border-b border-gray-900"
+    >
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent opacity-50"
+      ></div>
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <span
+          class="inline-block px-4 py-1 rounded-full border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6"
+          >Established 2024</span
+        >
+        <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+          Elite Gadgets for <br /><span class="gradient-text"
+            >Elite People</span
+          >
+        </h2>
+        <p class="text-gray-400 mb-10 text-lg">
+          অরিজিনাল স্মার্টফোন এবং প্রো-লেভেল সার্ভিসিং—সবই এখন এক ছাদের নিচে।
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#shop"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full font-bold transition shadow-lg shadow-blue-600/20"
+            >Explore Inventory</a
+          >
+          <a
+            href="#service"
+            class="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-10 py-4 rounded-full font-bold transition"
+            >Service Center</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <section id="shop" class="max-w-7xl mx-auto py-20 px-6">
+      <div class="mb-12">
+        <h3 class="text-3xl font-bold mb-2">New Arrivals</h3>
+        <div class="h-1 w-20 bg-blue-600 rounded-full"></div>
+      </div>
+
+      <div
+        id="product-list"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+      ></div>
+    </section>
+
+    <section
+      id="service"
+      class="bg-[#0f0f0f] py-20 px-6 border-y border-gray-900"
+    >
+      <div
+        class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16"
+      >
+        <div class="md:w-1/2 relative group">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition"
+          ></div>
+          <img
+            src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800"
+            class="relative rounded-3xl grayscale group-hover:grayscale-0 transition duration-500 shadow-2xl"
+          />
+        </div>
+        <div class="md:w-1/2">
+          <h3 class="text-4xl font-bold mb-6">এক্সপার্ট সার্ভিসিং সেন্টার</h3>
+          <p class="text-gray-400 mb-8 leading-relaxed">
+            আপনার ফোনের ডিসপ্লে ফেটে গেছে বা ব্যাটারি ব্যাকআপ কম দিচ্ছে?
+            ঝিনাইদহের সেরা টেকনিশিয়ান দ্বারা আপনার ফোনের যত্ন নিন। আমরা ব্যবহার
+            করি ১০০% জেনুইন পার্টস।
+          </p>
+          <div class="grid grid-cols-2 gap-4 mb-10">
+            <div class="flex items-center space-x-3 text-sm text-gray-300">
+              <i class="fas fa-microchip text-blue-500"></i>
+              <span>Hardware Fix</span>
+            </div>
+            <div class="flex items-center space-x-3 text-sm text-gray-300">
+              <i class="fas fa-code text-blue-500"></i>
+              <span>Software Updates</span>
+            </div>
+          </div>
+          <button
+            class="bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-blue-500 hover:text-white transition-all duration-300"
+          >
+            Book Appointment
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer id="about" class="bg-black py-16 px-6 border-t border-gray-900">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12"
+      >
+        <div>
+          <h4 class="text-2xl font-bold mb-6 text-white italic">
+            Utsho <span class="text-blue-500">Mobile</span>
+          </h4>
+          <p class="text-gray-500">
+            Owner:
+            <span class="text-gray-300 font-bold">Tanzim Ahmed Utsho</span>
+          </p>
+          <p class="text-gray-500">
+            Since: <span class="text-gray-300">2024</span>
+          </p>
+        </div>
+        <div>
+          <h5
+            class="font-bold text-gray-200 mb-4 uppercase text-xs tracking-widest"
+          >
+            Connect
+          </h5>
+          <div class="flex space-x-5 text-xl">
+            <a href="#" class="text-gray-500 hover:text-white"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="text-gray-500 hover:text-white"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-gray-500 hover:text-white"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+        <div>
+          <h5
+            class="font-bold text-gray-200 mb-4 uppercase text-xs tracking-widest"
+          >
+            Legal
+          </h5>
+          <ul class="text-gray-500 text-sm space-y-2">
+            <li>
+              <a href="#" class="hover:text-blue-500 transition"
+                >Terms & Conditions</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-blue-500 transition"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p
+        class="text-center text-gray-700 text-xs border-t border-gray-900 pt-8"
+      >
+        Designed by Utsho JS Developer. All rights reserved.
+      </p>
+    </footer>
+
+    <div
+      id="modal"
+      class="hidden fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-[#171717] border border-gray-800 rounded-[2rem] max-w-lg w-full p-8 shadow-2xl transform transition-all"
+      >
+        <div id="modal-content"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
