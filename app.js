@@ -35,7 +35,9 @@ const phones = [
 
 const productList = document.getElementById("product-list");
 
+// --- Product Logic ---
 function render() {
+  if (!productList) return;
   productList.innerHTML = phones
     .map(
       (phone) => `
@@ -79,5 +81,61 @@ function openDetails(id) {
 function closeDetails() {
   document.getElementById("modal").classList.add("hidden");
 }
+
+// --- Review Logic ---
+
+function openReviewModal() {
+  document.getElementById("review-modal").classList.remove("hidden");
+}
+
+function closeReviewModal() {
+  document.getElementById("review-modal").classList.add("hidden");
+}
+
+// নতুন রিভিউ সাবমিট করার ফাংশন
+document
+  .getElementById("review-form")
+  ?.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("reviewer-name").value;
+    const text = document.getElementById("reviewer-text").value;
+    const firstLetter = name.charAt(0).toUpperCase();
+
+    // নতুন রিভিউ কার্ডের ডিজাইন
+    const reviewHTML = `
+        <div class="product-card p-8 rounded-[2rem] border border-blue-500/30 animate-pulse-once">
+          <div class="flex text-yellow-500 mb-4 text-xs">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-400 text-sm italic mb-8 leading-relaxed">
+            "${text}"
+          </p>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-400 rounded-2xl flex items-center justify-center font-bold text-white shadow-lg">${firstLetter}</div>
+            <div>
+              <h4 class="text-white font-bold text-sm">${name}</h4>
+              <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Just Now</p>
+            </div>
+          </div>
+        </div>
+    `;
+
+    // রিভিউর শুরুতে যুক্ত করা
+    const reviewList = document.getElementById("review-list");
+    reviewList.insertAdjacentHTML("afterbegin", reviewHTML);
+
+    // ফর্ম ক্লিয়ার এবং মোডাল বন্ধ
+    this.reset();
+    closeReviewModal();
+  });
+
+// মডালের বাইরে ক্লিক করলে বন্ধ হবে
+window.onclick = function (event) {
+  const pModal = document.getElementById("modal");
+  const rModal = document.getElementById("review-modal");
+  if (event.target == pModal) pModal.classList.add("hidden");
+  if (event.target == rModal) rModal.classList.add("hidden");
+};
 
 render();

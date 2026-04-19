@@ -132,7 +132,7 @@
           <h3 class="text-4xl font-bold mb-6">এক্সপার্ট সার্ভিসিং সেন্টার</h3>
           <p class="text-gray-400 mb-8 leading-relaxed">
             আপনার ফোনের ডিসপ্লে ফেটে গেছে বা ব্যাটারি ব্যাকআপ কম দিচ্ছে?
-            ঝিনাইদহের সেরা টেকনিশিয়ান দ্বারা আপনার ফোনের যত্ন নিন। আমরা ব্যবহার
+            ঝিনাইদহের সেরা টেকনিশিয়ান দ্বারা আপনার ফোনের যত্ন নিন। আমরা ব্যবহার
             করি ১০০% জেনুইন পার্টস।
           </p>
           <div class="grid grid-cols-2 gap-4 mb-10">
@@ -151,6 +151,55 @@
           >
             Book Appointment
           </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="max-w-7xl mx-auto py-20 px-6">
+      <div
+        class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4"
+      >
+        <div>
+          <h3 class="text-3xl font-bold mb-2 text-white">Customer Reviews</h3>
+          <div class="h-1 w-20 bg-blue-600 rounded-full"></div>
+        </div>
+        <button
+          onclick="openReviewModal()"
+          class="bg-blue-600/10 hover:bg-blue-600 border border-blue-600/30 text-blue-400 hover:text-white px-6 py-2 rounded-full text-sm font-bold transition-all flex items-center gap-2"
+        >
+          <i class="fas fa-pen-nib"></i> Write a Review
+        </button>
+      </div>
+
+      <div
+        id="review-list"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        <div class="product-card p-8 rounded-[2rem]">
+          <div class="flex text-yellow-500 mb-4 text-xs">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-400 text-sm italic mb-8 leading-relaxed">
+            "ঝিনাইদহের সেরা মোবাইল শপ। তাদের সার্ভিসিং কোয়ালিটি সত্যিই অসাধারণ
+            এবং টেকনিশিয়ানরা অনেক দক্ষ।"
+          </p>
+          <div class="flex items-center space-x-4">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-400 rounded-2xl flex items-center justify-center font-bold text-white shadow-lg"
+            >
+              R
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-sm">Rakibul Islam</h4>
+              <p
+                class="text-[10px] text-gray-500 uppercase tracking-widest font-bold"
+              >
+                Verified Customer
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -219,6 +268,61 @@
         Designed by Utsho JS Developer. All rights reserved.
       </p>
     </footer>
+
+    <div
+      id="review-modal"
+      class="hidden fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-[#171717] border border-gray-800 rounded-[2.5rem] max-w-lg w-full p-10 shadow-3xl transform transition-all"
+      >
+        <div class="flex justify-between items-center mb-8">
+          <h3 class="text-2xl font-black text-white italic">
+            Write a <span class="text-blue-500">Review</span>
+          </h3>
+          <button
+            onclick="closeReviewModal()"
+            class="text-gray-500 hover:text-white transition"
+          >
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+        <form id="review-form" class="space-y-6">
+          <div>
+            <label
+              class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="reviewer-name"
+              class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 focus:outline-none focus:border-blue-500 transition"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div>
+            <label
+              class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2"
+              >Your Experience</label
+            >
+            <textarea
+              id="reviewer-text"
+              rows="4"
+              class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 focus:outline-none focus:border-blue-500 transition"
+              placeholder="How was our service?"
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-2xl transition shadow-lg shadow-blue-600/20 uppercase tracking-widest text-sm"
+          >
+            Submit Review
+          </button>
+        </form>
+      </div>
+    </div>
 
     <div
       id="modal"

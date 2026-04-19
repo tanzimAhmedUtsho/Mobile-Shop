@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Utsho Mobile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background: radial-gradient(circle at top right, #1e3a8a, #000);
+        background-attachment: fixed;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Segoe UI", sans-serif;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+      .input-group:focus-within label {
+        color: #3b82f6;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body class="p-6">
+    <div class="glass w-full max-w-md p-10 rounded-[32px] text-white">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl font-black italic">
+          Utsho
+          <span class="text-blue-500 border-b-2 border-orange-500">Mobile</span>
+        </h1>
+        <p class="text-gray-400 mt-2">আপনার একাউন্টে লগইন করুন</p>
+      </div>
+
+      <form id="loginForm" class="space-y-6">
+        <div class="input-group">
+          <label
+            class="block text-sm font-medium text-gray-400 mb-2 transition-all"
+            >ইমেইল বা ফোন নম্বর</label
+          >
+          <div class="relative">
+            <span
+              class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500"
+            >
+              <i class="fas fa-envelope"></i>
+            </span>
+            <input
+              type="text"
+              id="email"
+              required
+              class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+              placeholder="example@mail.com"
+            />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label
+            class="block text-sm font-medium text-gray-400 mb-2 transition-all"
+            >পাসওয়ার্ড</label
+          >
+          <div class="relative">
+            <span
+              class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500"
+            >
+              <i class="fas fa-lock"></i>
+            </span>
+            <input
+              type="password"
+              id="password"
+              required
+              class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-12 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+              placeholder="••••••••"
+            />
+            <span
+              class="absolute inset-y-0 right-0 pr-4 flex items-center cursor-pointer text-gray-500 hover:text-white"
+              onclick="togglePassword()"
+            >
+              <i class="fas fa-eye" id="eyeIcon"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="flex justify-end">
+          <a
+            href="#"
+            class="text-xs text-blue-500 hover:text-blue-400 transition"
+            >পাসওয়ার্ড ভুলে গেছেন?</a
+          >
+        </div>
+
+        <button
+          type="submit"
+          id="loginBtn"
+          class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl shadow-lg shadow-blue-600/30 transition-all active:scale-95 flex items-center justify-center space-x-2"
+        >
+          <span>প্রবেশ করুন</span>
+          <i class="fas fa-arrow-right text-sm"></i>
+        </button>
+      </form>
+
+      <div class="mt-8 text-center text-sm text-gray-400">
+        একাউন্ট নেই?
+        <a href="#" class="text-blue-500 font-bold hover:underline"
+          >নতুন খুলুন</a
+        >
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>
