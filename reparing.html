@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utsho Mobile - রিপেয়ারিং সার্ভিস</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-blue: #007bff;
+        --dark-bg: #111;
+        --card-bg: #1a1a1a;
+        --text-gray: #ccc;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--dark-bg);
+        color: white;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+
+      .header-section {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .header-section h1 {
+        font-size: 2.5rem;
+        color: white;
+      }
+
+      .header-section span {
+        color: var(--primary-blue);
+      }
+
+      /* সার্ভিস কার্ড গ্রিড */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 60px;
+      }
+
+      .service-card {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        transition: transform 0.3s ease;
+        border: 1px solid #333;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-blue);
+      }
+
+      .service-card i {
+        font-size: 40px;
+        color: var(--primary-blue);
+        margin-bottom: 15px;
+      }
+
+      /* ফর্ম সেকশন */
+      .repair-form-container {
+        background: var(--card-bg);
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text-gray);
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #444;
+        background: #222;
+        color: white;
+        box-sizing: border-box;
+      }
+
+      button {
+        width: 100%;
+        padding: 15px;
+        background: var(--primary-blue);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+
+      .success-msg {
+        display: none;
+        color: #28a745;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-section">
+        <h1>আমাদের <span>রিপেয়ারিং</span> সার্ভিসসমূহ</h1>
+        <p>আপনার ফোনের যেকোনো সমস্যায় আমরা আছি আপনার পাশে।</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>ডিসপ্লে পরিবর্তন</h3>
+          <p>অরিজিনাল ডিসপ্লে এবং টাচ প্যানেল মেরামত।</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-battery-full"></i>
+          <h3>ব্যাটারি রিপ্লেসমেন্ট</h3>
+          <p>দ্রুত চার্জ শেষ হওয়া বা ব্যাটারি ফুলে যাওয়ার সমাধান।</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-tint"></i>
+          <h3>ওয়াটার ড্যামেজ</h3>
+          <p>পানিতে পড়া ফোনের উন্নত মানের সার্ভিসিং।</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-tools"></i>
+          <h3>সফটওয়্যার আপডেট</h3>
+          <p>লক আনলক এবং সব ধরনের সফটওয়্যার সমস্যা।</p>
+        </div>
+      </div>
+
+      <div class="repair-form-container">
+        <h2 style="text-align: center">সার্ভিস বুকিং দিন</h2>
+        <form id="repairForm">
+          <div class="form-group">
+            <label>আপনার নাম</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="আপনার নাম লিখুন"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>ফোন মডেল</label>
+            <input
+              type="text"
+              id="model"
+              placeholder="যেমন: iPhone 13 Pro"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>সমস্যার ধরণ</label>
+            <select id="issue">
+              <option value="display">ডিসপ্লে সমস্যা</option>
+              <option value="battery">ব্যাটারি সমস্যা</option>
+              <option value="charging">চার্জিং পোর্ট</option>
+              <option value="other">অন্যান্য</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>বিস্তারিত (ঐচ্ছিক)</label>
+            <textarea
+              id="details"
+              rows="4"
+              placeholder="সমস্যাটি বিস্তারিত বলুন..."
+            ></textarea>
+          </div>
+          <button type="submit">রিকোয়েস্ট পাঠান</button>
+        </form>
+        <div id="successMsg" class="success-msg">
+          <i class="fas fa-check-circle"></i> ধন্যবাদ! আমরা খুব শীঘ্রই আপনার
+          সাথে যোগাযোগ করবো।
+        </div>
+      </div>
+    </div>
+
+    <script src="reparing.js"></script>
+  </body>
+</html>

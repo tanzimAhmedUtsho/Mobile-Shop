@@ -1,24 +1,24 @@
 const products = [
   {
-    name: "iPhone 15 Pro Max",
+    name: "iPhone 17 Pro Max",
     brand: "Apple",
     price: 162000,
     oldPrice: 175000,
-    img: "https://images.unsplash.com/photo-1696446701796-da61225697cc?auto=format&fit=crop&q=80&w=400",
+    img: "/image/17 pro max.jpg",
   },
   {
-    name: "Samsung S24 Ultra",
+    name: "Samsung S25 Ultra",
     brand: "Samsung",
     price: 138000,
     oldPrice: 145000,
-    img: "https://images.unsplash.com/photo-1707246261592-3a33999905fa?auto=format&fit=crop&q=80&w=400",
+    img: "/image/Samsung-Galaxy-S25-Ultra.jpg",
   },
   {
-    name: "Pixel 8 Pro",
+    name: "Pixel 10 Pro",
     brand: "Google",
     price: 92500,
     oldPrice: 99000,
-    img: "https://images.unsplash.com/photo-1696429117070-077558667503?auto=format&fit=crop&q=80&w=400",
+    img: "/image/google-pixel-10-pro.webp",
   },
   {
     name: "Realme GT 5",
